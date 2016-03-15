@@ -12,6 +12,7 @@ More importantily, this project is used as github 101 to let me familar with git
 #Synchronizer
 (2phase vs 3phase)
 10m工作时钟写数20m时钟读，与10m时钟写数100m时钟读数的区别是什么?
+从快时钟到慢时钟传输
 
 异步FIFO有数据位转换功能，32b的数据入16b数据出
 
