@@ -33,9 +33,12 @@ always @(posedge wr_clk or posedge reset) begin
 end
 
 always @(posedge wr_clk) begin
-	rd_sync_1 <= rd_pointer;
+	rd_sync_1 <= rd_pointer_g;
 	rd_pointer_sync <= rd_sync_1;
 end
+
+assign full  = ((wr_pointer - rd_pointer_sync) == DEPTH) ? 1'b1 : 1'b0;
+
 
 //--read logic--//
 always @(posedge rd_clk or posedge reset) begin
@@ -49,10 +52,18 @@ always @(posedge rd_clk or posedge reset) begin
 end
 
 always @(posedge rd_clk) begin
-	wr_sync_1 <= wr_pointer;
+	wr_sync_1 <= wr_pointer_g;
 	wr_pointer_sync <= wr_sync_1;
 end
 
+assign empty = ((wr_pointer_sync - rd_pointer) == 0) ? 1'b1 : 1'b0;
+
+
+//--mem--//
+always @(posedge wr_clk) begin
+	data_out <= mem[rd_pointer];
+	mem[wr_pointer] <= data_in;
+end
 
 //--gray code--//
 always @(wr_pointer) begin
