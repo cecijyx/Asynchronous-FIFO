@@ -1,4 +1,6 @@
 # Asynchronous-FIFO
+
+#About the project
 This project is mainly focus on build an asynchronous fifo in verilog and make further optimization.
 More importantily, this project is used as github 101 to let me familar with github.
 
