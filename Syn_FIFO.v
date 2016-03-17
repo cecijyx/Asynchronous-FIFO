@@ -1,3 +1,4 @@
+//--Synchronous FIFO--//
 module simple_fifo ()
 
 parameter WIDTH = 8;
