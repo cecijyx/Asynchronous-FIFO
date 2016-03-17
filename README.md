@@ -8,7 +8,7 @@ More importantily, this project is used as github 101 to let me familar with git
 FIFO means first in first out.
 
 #Why FIFO is important?
-
+FIFOs are often used to safely pass data from one clock domain to another asynchronous clock domain.
 
 #亚稳态
 (异步fifo的满空判断属于超前判断，也就是保守判断，空和满都不是即时状态，当pointer相等判定为空的时候，wr_pointer其实已经多跑了两T。这并不是什么错误，因为你的比较是同步逻辑。异步逻辑转到同步逻辑不可避免需要额外的时钟开销，这会导致满空趋于保守，但是保守并不等于错误。这么写会稍微有性能损失，但是不会出错。https://www.zhihu.com/question/32275527)
