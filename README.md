@@ -5,9 +5,9 @@ This project is mainly focus on build an asynchronous fifo in verilog and make f
 More importantily, this project is used as github 101 to let me familar with github.
 
 #What is FIFO?
-FIFO means first in first out.
+FIFO means first in first out, a method for organizing and manipulating a data buffer.
 
-Why FIFO is important?
+#Why FIFO is important?
 FIFOs are often used to safely pass data from one clock domain to another asynchronous clock domain.
 
 #Reference
