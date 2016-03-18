@@ -10,12 +10,15 @@ input [WIDTH-1 : 0] data_in;
 input rd_clk, wr_clk;
 input reset;
 
-reg [POINTER-1 : 0] rd_pointer, rd_pointer_g, rd_sync_1, rd_sync_2, rd_pointer_sync;
-reg [POINTER-1 : 0] wr_pointer, wr_pointer_g, wr_sync_1, wr_sync_2, wr_pointer_sync;
+reg [POINTER-1 : 0] rd_pointer, rd_pointer_g, rd_sync_1, rd_sync_2;
+reg [POINTER-1 : 0] wr_pointer, wr_pointer_g, wr_sync_1, wr_sync_2;
 
 parameter DEPTH = 1 << POINTER;
 
 reg [WIDTH-1 : 0] mem [DIPTH-1 : 0];
+
+wire [POINTER-1 : 0] rd_pointer_sync;
+wire [POINTER-1 : 0] wr_pointer_sync;
 
 //--write logic--//
 always @(posedge wr_clk or posedge reset) begin
