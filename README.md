@@ -12,4 +12,5 @@ FIFOs are often used to safely pass data from one clock domain to another asynch
 
 #Reference
 https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)
+
 Cummings, Clifford E. "Simulation and synthesis techniques for asynchronous FIFO design." SNUG 2002 (Synopsys Users Group Conference, San Jose, CA, 2002) User Papers. 2002.
