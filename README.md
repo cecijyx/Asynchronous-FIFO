@@ -17,6 +17,12 @@ FIFOs are often used to safely pass data from one clock domain to another asynch
 
 #Principle of gray code
 
+# Binary code Gray code convert
+Binary to Gray:
+G_code = (B_code>>1)^B_code;
+Gray to Binary:
+
+
 #Synchronizer
 (2phase vs 3phase)
 10m工作时钟写数20m时钟读，与10m时钟写数100m时钟读数的区别是什么?
