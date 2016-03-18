@@ -76,7 +76,7 @@ always @(wr_pointer) begin
 	4'b1011: wr_pointer_g = 4'b1110;
 	4'b1100: wr_pointer_g = 4'b1010;
 	4'b1101: wr_pointer_g = 4'b1011;
-	4'b1110: wr_pointer_g = 4'b1010;
+	4'b1110: wr_pointer_g = 4'b1001;
 	4'b1111: wr_pointer_g = 4'b1000;
 end
 
@@ -96,7 +96,7 @@ always @(rd_pointer) begin
 	4'b1011: rd_pointer_g = 4'b1110;
 	4'b1100: rd_pointer_g = 4'b1010;
 	4'b1101: rd_pointer_g = 4'b1011;
-	4'b1110: rd_pointer_g = 4'b1010;
+	4'b1110: rd_pointer_g = 4'b1001;
 	4'b1111: rd_pointer_g = 4'b1000;
 end
 
