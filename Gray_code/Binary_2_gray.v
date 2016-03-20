@@ -7,6 +7,7 @@ module Binary_to_Gray (dout, din);
 output [3:0] dout ;
 
 input [3:0] din ;
+//--solution 1--//
 /*
 assign dout[3] = din[3];
 assign dout[2] = din[3]^din[2];
@@ -14,10 +15,10 @@ assign dout[1] = din[2]^din[1];
 assign dout[0] = din[1]^din[0];
 */
 
-//--simple solution--//
+//-- solution 2--//
 assign dout = din ^ (din >>1);
 
-//--table--//
+//--solution 3--//
 /*
 always @(din) begin
 	case (din)

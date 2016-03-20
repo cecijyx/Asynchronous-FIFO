@@ -53,9 +53,15 @@ always @(posedge rd_clk) begin
 end
 
 //--Combinational logic--//
+//--Binary pointer--//
 assign wr_full  = ((wr_pointer[POINTER-1 : 0] == rd_pointer_sync[POINTER-1 : 0]) && 
 				(wr_pointer[POINTER] != rd_pointer_sync[POINTER] ));
+//-- Gray pointer--//
+//assign wr_full  = ((wr_pointer[POINTER-2 : 0] == rd_pointer_sync[POINTER-2 : 0]) && 
+//				(wr_pointer[POINTER-1] != rd_pointer_sync[POINTER-1]) &&
+//				(wr_pointer[POINTER] != rd_pointer_sync[POINTER]));
 assign rd_empty = ((wr_pointer_sync == rd_pointer) == 0) ? 1'b1 : 1'b0;
+
 assign data_out <= mem[rd_pointer[POINTER-1 : 0]];
 
 //--binary code to gray code--//

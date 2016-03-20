@@ -7,6 +7,7 @@ module Gray_to_Binary (dout, din);
 output [3:0] dout ;
 
 input [3:0] din ;
+//--solution 1-//
 /*
 assign dout[3] = din[3];
 assign dout[2] = din[3]^din[2];
@@ -14,10 +15,20 @@ assign dout[1] = din[3]^din[2]^din[1];
 assign dout[0] = din[3]^din[2]^din[1]^din[0];
 */
 
-//--simple solution--//
+//--solution 2--//
+/*
 assign dout = din ^ (din >> 1) ^ (din >> 2) ^ (din >>3);
+*/
 
-//--table--//
+//--solution 3--//
+//--save more space--//
+always @(din) begin : 
+	dout[3] = din[3];
+	for (int i = 1; i < 3; i++) begin
+		dout[i-1] = din[i-1] ^ dout[i];
+	end
+end
+//--solution 4--//
 /*
 always @(din) begin
 	case (din)
