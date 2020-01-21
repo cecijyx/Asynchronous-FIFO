@@ -2,7 +2,7 @@ module asy_fifo (data_out, wr_full, rd_empty,
 				data_in, rd_clk, wr_clk, reset);
 
 parameter WIDTH = 8;
-parameter POINTER = 4;
+parameter POINTER = 3;
 output [WIDTH-1 : 0] data_out;
 output wr_full;
 output rd_empty;
